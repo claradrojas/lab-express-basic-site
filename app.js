@@ -7,11 +7,14 @@ const app = express();
 // Make everything inside of public/ available
 app.use(express.static('public'));
 
-// our first Route:
+// our first Route --> home
 app.get('/home', (request, response, next) => response.sendFile(__dirname + '/views/home.html'));
 
-// cat route:
-//app.get('/cat', (request, response, next) => response.sendFile(__dirname + '/views/cat-page.html'));
+// our second Route --> about
+app.get('/about', (request, response, next) => response.sendFile(__dirname + '/views/about.html'));
+
+// our third Route --> works
+app.get('/works', (request, response, next) => response.sendFile(__dirname + '/views/works.html'));
 
 // Server Started
 app.listen(3000) 
